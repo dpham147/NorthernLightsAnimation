@@ -26,23 +26,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/frameAnimButton"
-        android:elevation="0dp" />
+        android:onClick="toggleFrameAnim" />
 
     <Button
         android:text="@string/rotate_anim_button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rotateAnimButton" />
+        android:id="@+id/rotateAnimButton"
+        android:onClick="toggleRotateAnim" />
 
     <Button
         android:text="@string/shake_anim_button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/shakeAnimButton" />
+        android:id="@+id/shakeAnimButton"
+        android:onClick="toggleShakeAnim" />
 
     <Button
         android:text="@string/flip_anim_button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/customAnimButton" />
+        android:id="@+id/customAnimButton"
+        android:onClick="toggleCustomAnim" />
 </LinearLayout>
