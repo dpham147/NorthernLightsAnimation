@@ -6,11 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AnimationActivity extends AppCompatActivity {
 
     private ImageView lightsImageView;
+    private Button frameButton;
+    private Button shakeButton;
+    private Button rotateButton;
+    private Button customButton;
     // Frame Animation uses AnimationDrawable type
     private AnimationDrawable frameAnim;
     // Tween Animation uses Animation type
@@ -24,6 +29,10 @@ public class AnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animation);
 
         lightsImageView = (ImageView) findViewById(R.id.lightsImageView);
+        frameButton = (Button) findViewById(R.id.frameAnimButton);
+        shakeButton = (Button) findViewById(R.id.shakeAnimButton);
+        rotateButton = (Button) findViewById(R.id.rotateAnimButton);
+        customButton = (Button) findViewById(R.id.customAnimButton);
     }
 
     public void toggleFrameAnim(View view) {
@@ -62,10 +71,18 @@ public class AnimationActivity extends AppCompatActivity {
     public void toggleCustomAnim(View view) {
         if (customAnim != null && customAnim.hasStarted()) {
             lightsImageView.clearAnimation();
+            frameButton.clearAnimation();
+            shakeButton.clearAnimation();
+            rotateButton.clearAnimation();
+            customButton.clearAnimation();
             customAnim = null;
         } else {
             customAnim = AnimationUtils.loadAnimation(this, R.anim.custom_anim);
             lightsImageView.startAnimation(customAnim);
+            frameButton.startAnimation(customAnim);
+            shakeButton.startAnimation(customAnim);
+            rotateButton.startAnimation(customAnim);
+            customButton.startAnimation(customAnim);
         }
     }
 }

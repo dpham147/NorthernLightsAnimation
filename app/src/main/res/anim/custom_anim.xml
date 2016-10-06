@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <alpha android:duration="2000"
-        android:fromAlpha="1.0"
-        android:toAlpha="0"
-        />
-    <translate
-        android:duration="2000"
-        android:fromYDelta="0"
-        android:toYDelta="-100%p"/>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/decelerate_interpolator">
 
-    <alpha android:fromAlpha="0"
-        android:toAlpha="1.0"
-        android:startOffset="2000"/>
-    <translate android:duration="2000"
-        android:fromYDelta="-100%p"
+    <rotate android:fromDegrees="0"
+        android:toDegrees="359"
+        android:pivotX="0%"
+        android:pivotY="0%"
+        android:duration="1000"
+        android:repeatCount="3"/>
+
+    <rotate android:fromDegrees="0"
+        android:toDegrees="359"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:duration="1000"
+        android:repeatCount="3"/>
+
+    <translate android:duration="1000"
+        android:fromYDelta="0"
+        android:toYDelta="-20%p"/>
+
+    <translate android:duration="1000"
+        android:fromYDelta="-20%p"
+        android:toYDelta="20%p"
+        android:startOffset="1000"/>
+
+    <translate android:duration="1000"
+        android:fromYDelta="20%p"
         android:toYDelta="0"
         android:startOffset="2000"/>
 </set>
